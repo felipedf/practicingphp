@@ -1,4 +1,4 @@
-<?php include "includes/db.php" ?>
+<?php include "db.php" ?>
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -14,15 +14,7 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                   <?php
-                        $query = "SELECT * FROM categories";
-                        $query_result = mysqli_query($con, $query);
-
-                        while($row = mysqli_fetch_assoc($query_result)) {
-                            $cat_tittle = $row['cat_tittle'];
-                            echo "<li> <a href='#'>{$cat_tittle}</a></li>";
-                        }
-                    ?>
+                    <li><a href="admin/index.php">Admin</a></li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->

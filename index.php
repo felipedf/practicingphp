@@ -11,13 +11,13 @@
         <div class="row">
 
             <!-- Blog Entries Column -->
-            <div class="col-md-8">
+          <div class="col-md-8">
                  
                 <?php
                     $query = "SELECT * FROM posts";
                     $query_result = mysqli_query($con, $query);
                     while($row = mysqli_fetch_assoc($query_result)) {
-                        $post_tittle = $row['post_tittle'];
+                        $post_title = $row['post_title'];
                         $post_author = $row['post_author'];
                         $post_image = $row['post_image'];
                         $post_date = $row['post_date'];
@@ -31,7 +31,7 @@
 
                 <!-- First Blog Post -->
                 <h2>
-                    <a href="#"><?php echo $post_tittle ?></a>
+                    <a href="#"><?php echo $post_title ?></a>
                 </h2>
                 <p class="lead">
                     by <a href="index.php"><?php echo $post_author ?></a>
@@ -62,7 +62,7 @@
             </div>
 
             <!-- Blog Sidebar Widgets Column -->
-            <?php include "includes/sidebar.php" ?>
+            <?php include "includes/sidebar.php"; ?>
 
         </div>
         <!-- /.row -->
@@ -70,5 +70,5 @@
         <hr>
         
 <!-- Footer -->
-<?php include "includes/footer.php" ?>
+<?php include "includes/footer.php"; ?>
 
