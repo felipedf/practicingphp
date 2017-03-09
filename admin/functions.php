@@ -1,4 +1,12 @@
 <?php
+    function confirm($result) {
+        global $con;
+        
+        if(!$result) {
+            die('Query Failed '. mysqli_error($con));
+        }
+    }
+
     function insert_categories() {
         global $con;
         if(isset($_POST['submit'])) {
@@ -11,9 +19,7 @@
                 $query = "INSERT INTO categories(cat_title) 
                             VALUE('{$title}')";
                 $create_query = mysqli_query($con, $query);
-                if(!$create_query) {
-                    die("deu errado" . mysqli_error($con));
-                }
+                confirm($create_query);
             }
         }
     }
@@ -47,9 +53,7 @@
             $query = "DELETE FROM categories WHERE cat_id='$cat_tb_id'";
 
             $delete_query = mysqli_query($con, $query);
-            if(!$delete_query) {
-                die("deu mera ". mysqli_error($con));
-            }
+            confirm($delete_query);
             header("Location: admin_categories.php");
         }       
     }
